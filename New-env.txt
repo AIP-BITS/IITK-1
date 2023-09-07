@@ -1,0 +1,29 @@
+# get Miniconda
+curl -fsSL https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o miniconda.sh
+
+# Create conda environment
+conda create --name search python=3.10
+conda activate search
+pip install --upgrade pip
+conda install -c conda-forge cudatoolkit=11.2 cudnn=8.1.0
+pip install tensorflow
+pip install jupyter
+pip install jupyter_contrib_nbextensions
+jupyter contrib nbextension install --user
+pip install numpy pandas matplotlib pillow joblib scikit-learn streamlit requests
+
+pip install pyspark findspark
+pip install requests
+
+python -m pip install fastapi uvicorn[standard]
+
+#=====================
+# Docker 
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+# Post-installation steps for Linux.
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+docker ps
+docker run hello-world

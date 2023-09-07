@@ -1,0 +1,18 @@
+# get Miniconda
+curl -fsSL https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o miniconda.sh
+
+# Create conda environment
+conda create --name tfpy10 python=3.10
+conda activate tfpy10
+pip install --upgrade pip
+conda install -c conda-forge cudatoolkit=11.2 cudnn=8.1.0
+pip install tensorflow
+pip install jupyter
+pip install jupyter_contrib_nbextensions
+jupyter contrib nbextension install --user
+pip install numpy pandas matplotlib pillow joblib scikit-learn streamlit requests
+
+pip install pyspark findspark
+pip install requests
+
+python -m pip install fastapi uvicorn[standard]
