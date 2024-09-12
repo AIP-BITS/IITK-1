@@ -99,3 +99,19 @@ python3 -c "import tensorflow as tf; print(tf.__version__); print('Num GPUs Avai
 echo $PATH | grep cuda
 echo $LD_LIBRARY_PATH | grep cuda
 
+#===========virtualbox
+sudo apt update
+sudo apt upgrade
+
+sudo apt install gcc make perl
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib"
+sudo apt update
+sudo apt install virtualbox-7.0
+wget https://download.virtualbox.org/virtualbox/7.0.6/Oracle_VM_VirtualBox_Extension_Pack-7.0.6.vbox-extpack
+sudo VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-7.0.6.vbox-extpack
+virtualbox
+
+sudo apt remove virtualbox
+sudo apt autoremove
+
