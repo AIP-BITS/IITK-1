@@ -6,6 +6,8 @@ conda create --name <envname> python=3.10 -y
 conda activate <envname>
 pip install --upgrade pip
 pip install ipykernel
+pip install tensorflow-macos
+pip install tensorflow-metal
 pip install jupyter
 pip install jupyter_contrib_nbextensions
 jupyter contrib nbextension install --user
